@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 7%; /* Very dark gray #121212 */
+    --foreground: 210 40% 98%; /* Light, slightly bluish white for text */
+
+    --card: 0 0% 10%; /* Slightly lighter than background for cards */
+    --card-foreground: 210 40% 98%;
+
+    --popover: 0 0% 10%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 207 90% 68%; /* Subdued blue #64B5F6 */
+    --primary-foreground: 210 40% 5%; /* Dark text on primary blue buttons */
+
+    --secondary: 174 43% 25%; /* Darker teal for secondary elements */
+    --secondary-foreground: 174 43% 85%; /* Lighter teal text on secondary */
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 60%; /* Muted text */
+
+    --accent: 174 43% 57%; /* Muted teal #4DB6AC */
+    --accent-foreground: 210 40% 5%; /* Dark text on accent teal */
+
+    --destructive: 0 72% 51%; /* Standard destructive red */
+    --destructive-foreground: 0 0% 98%;
+
+    --success: 120 60% 45%; /* Green for success/normal states */
+
+    --border: 0 0% 14%; /* Subtle borders */
+    --input: 0 0% 14%; /* Input background */
+    --ring: 207 90% 75%; /* Lighter blue for focus rings */
+
+    --radius: 0.5rem;
+
+    /* Default chart colors, can be overridden by ChartConfig */
+    --chart-1: 207 90% 68%; /* primary */
+    --chart-2: 174 43% 57%; /* accent */
+    --chart-3: 210 40% 98%; /* foreground */
+    --chart-4: 0 0% 60%;   /* muted-foreground */
+    --chart-5: 174 43% 85%; /* secondary-foreground */
+    
+    /* Sidebar variables (keeping them for shadcn ui consistency, though not actively used in this specific app design) */
+    --sidebar-background: 0 0% 10%;
+    --sidebar-foreground: 210 40% 90%;
+    --sidebar-primary: 207 90% 68%;
+    --sidebar-primary-foreground: 210 40% 5%;
+    --sidebar-accent: 174 43% 57%;
+    --sidebar-accent-foreground: 210 40% 5%;
+    --sidebar-border: 0 0% 14%;
+    --sidebar-ring: 207 90% 75%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    /* Removed explicit font-family to let Next.js font loader (Geist) take precedence */
+  }
+}
